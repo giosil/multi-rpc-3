@@ -862,10 +862,10 @@ class RpcServlet extends HttpServlet implements RpcAuthorizationChecker
           return Double.valueOf(sValue);
         }
         else {
-          Long longValue = new Long(sValue);
+          Long longValue = Long.parseLong(sValue);
           if(sValue.equals(longValue.toString())) {
             if(longValue.longValue() == longValue.intValue()) {
-              return new Integer(longValue.intValue());
+              return longValue.intValue();
             }
             else {
               return longValue;

@@ -85,7 +85,7 @@ class RpcUtil
   {
     if(message == null) message = "Service exception";
     JSONObject error = new JSONObject();
-    error.put("code",    new Integer(code));
+    error.put("code",    code);
     error.put("message", message);
     if(data != null) error.put("data", data);
     resp.put("error", error);
@@ -134,8 +134,7 @@ class RpcUtil
         sLocation += "/" + sServletPath;
       }
     }
-    else
-    if(sLocation.endsWith("*")) {
+    else if(sLocation.endsWith("*")) {
       sLocation = sLocation.substring(0, sLocation.length()-1);
       if(sLocation.endsWith("/")) sLocation = sLocation.substring(0, sLocation.length()-1);
       String sCtxPath     = request.getContextPath();

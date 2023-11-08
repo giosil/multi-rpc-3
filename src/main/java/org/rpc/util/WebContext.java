@@ -2,8 +2,6 @@ package org.rpc.util;
 
 import java.security.Principal;
 
-import java.util.List;
-
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.http.HttpServletRequest;
@@ -66,9 +64,9 @@ class WebContext
   boolean isUserInRole(String role)
   {
     if(userPrincipal instanceof SimplePrincipal) {
-      List<String> roles = ((SimplePrincipal) userPrincipal).getRoles();
-      if(roles != null) {
-        return roles.contains(role);
+      Group group = ((SimplePrincipal) userPrincipal).getRoles();
+      if(group != null) {
+        return group.isMember(new SimplePrincipal(role));
       }
     }
     if(request != null) {
