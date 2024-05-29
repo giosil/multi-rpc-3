@@ -219,6 +219,10 @@ public class Test {
 - `git clone https://github.com/giosil/multi-rpc-3.git`
 - `mvn clean install`
 
+or
+
+- `mvn -f .\pom-giosil.xml clean install -DcreateChecksum=true`
+
 ## Contributors
 
 * [Giorgio Silvestris](https://github.com/giosil)

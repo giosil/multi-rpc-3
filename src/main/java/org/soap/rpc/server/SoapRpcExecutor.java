@@ -32,13 +32,13 @@ class SoapRpcExecutor implements RpcExecutor
   
   public SoapRpcExecutor()
   {
-    System.err.println(this.getClass().getName() + " ver. 2.9 instantiated at " + WUtil.formatDateTime(new Date(), "-", true));
+    System.err.println(this.getClass().getName() + " ver. 3.0.0 instantiated at " + WUtil.formatDateTime(new Date(), "-", true));
     this.handlers = new HashMap();
   }
   
   public SoapRpcExecutor(Map mapHandlers)
   {
-    System.err.println(this.getClass().getName() + " ver. 2.9 instantiated at " + WUtil.formatDateTime(new Date(), "-", true));
+    System.err.println(this.getClass().getName() + " ver. 3.0.0 instantiated at " + WUtil.formatDateTime(new Date(), "-", true));
     this.handlers = mapHandlers;
   }
   
